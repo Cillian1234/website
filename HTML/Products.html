@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/MainStyle.css">
+    <link rel="stylesheet" href="../CSS/ProductGrid.css">
+    <link rel="stylesheet" href="../CSS/flexnav.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../JavaScript/jquery.flexnav.min.js" type="text/javascript"></script>
+    <script src="../JavaScript/Basket.js"></script>
+    <title>Products</title>
+</head>
+<body onload="startup()">
+<div class="grid-container">
+    <div class="grid-item header">
+        <h1>Products</h1>
+        <p>Here at Computer Company we pride ourselves on selling top quality equipment at the lowest price possible<sub>[1]</sub></p>
+        <div class=menu-button>
+            Menu
+        </div>
+        <nav>
+            <ul data-breakpoint-em="50" class="flexnav">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="FindUs.html">Find us</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li><a href="Complaints.html">Complaints</a></li>
+            </ul>
+        </nav>
+        <script>$(".flexnav").flexNav();</script>
+    </div>
+    <div class="grid-item item1">
+        <div class="item-grid-container">
+            <div class="item-grid-item">
+                <h2 id="cpuName"></h2>
+            </div>
+            <div class="item-grid-item">
+                <img src="../Images/CPU.png" alt="Image of cpu">
+            </div>
+            <div class="item-grid-item">
+                <p id="itemdesc">A top of the line Central Processing Unit capable of preforming a blazing 16 processes per minute!</p>
+            </div>
+            <div class="item-grid-item">
+                <div class="purchasestuff">
+                    <p id="cpuPrice">€550</p>
+                    <label for="cpuQuantity">Quantity</label>
+                    <input type="number" id="cpuQuantity" name="cpuQuantity" min="0" max="100" value="0" oninput=totalFunc()><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item item2">
+        <div class="item-grid-container">
+            <div class="item-grid-item">
+                <h2 id="gpuName"></h2>
+            </div>
+            <div class="item-grid-item">
+                <img src="../Images/GraphicsCard.png" alt="Image of gpu">
+            </div>
+            <div class="item-grid-item">
+                <p id="itemdesc">I think it could play like, portal 2 maybe.</p>
+            </div>
+            <div class="item-grid-item">
+                <div class="purchasestuff">
+                    <p id="gpuPrice">€850</p>
+                    <label for="gpuQuantity">Quantity</label>
+                    <input type="number" id="gpuQuantity" name="gpuQuantity" min="0" max="100" value="0" oninput=totalFunc()><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item item3">
+        <div class="item-grid-container">
+            <div class="item-grid-item">
+                <h2 id="motherboardName"></h2>
+            </div>
+            <div class="item-grid-item">
+                <img src="../Images/Motherboard.png" alt="Image of motherboard">
+            </div>
+            <div class="item-grid-item">
+                <p id="itemdesc">Perfect for plugging stuff in to.</p>
+            </div>
+            <div class="item-grid-item">
+                <div class="purchasestuff">
+                    <p id="motherboardPrice">€200</p>
+                    <label for="motherboardQuantity">Quantity</label>
+                    <input type="number" id="motherboardQuantity" name="motherboardQuantity" min="0" max="100" value="0" oninput=totalFunc()><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item item4">
+        <div class="item-grid-container">
+            <div class="item-grid-item">
+                <h2 id="ramName"></h2>
+            </div>
+            <div class="item-grid-item">
+                <img src="../Images/Ram.png" alt="Image of ram">
+            </div>
+            <div class="item-grid-item">
+                <p id="itemdesc">Make sure to allow cookies so we can randomly access all your information!</p>
+            </div>
+            <div class="item-grid-item">
+                <div class="purchasestuff">
+                    <p id="ramPrice">€120</p>
+                    <label for="ramQuantity">Quantity</label>
+                    <input type="number" id="ramQuantity" name="ramQuantity" min="0" max="100" value="0" oninput=totalFunc()><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item item5">
+        <div class="item-grid-container">
+            <div class="item-grid-item">
+                <h2 id="caseName"></h2>
+            </div>
+            <div class="item-grid-item">
+                <img src="../Images/Case.png" alt="Image of pink pc case">
+            </div>
+            <div class="item-grid-item">
+                <p id="itemdesc">We expect this to sell purely because it's pink and women love pink.</p>
+            </div>
+            <div class="item-grid-item">
+                <div class="purchasestuff">
+                    <p id="casePrice">€2400</p>
+                    <label for="caseQuantity">Quantity</label>
+                    <input type="number" id="caseQuantity" name="caseQuantity" min="0" max="100" value="0" oninput=totalFunc()><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-item item6">
+        <div class="item-grid-container">
+            <div class="item-grid-item">
+                <h2 id="ssdName"></h2>
+            </div>
+            <div class="item-grid-item">
+                <img src="../Images/SSD.png" alt="Image of ssd">
+            </div>
+            <div class="item-grid-item">
+                <p id="itemdesc">Can store all of your things that need digital storage.</p>
+            </div>
+            <div class="item-grid-item">
+                <div class="purchasestuff">
+                    <p id="ssdPrice">€240</p>
+                    <label for="ssdQuantity">Quantity</label>
+                    <input type="number" id="ssdQuantity" name="ssdQuantity" min="0" max="100" value="0"  oninput=totalFunc()>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-item basket">
+        <div class="basket-grid-container">
+
+            <div class="basket-grid-item special">
+                <h3>Basket</h3>
+            </div>
+
+            <div class="basket-grid-item">
+                <h3 id="cpuNameBasket"></h3>
+                <img id="basket" src="../Images/CPU.png" alt="Image of cpu">
+            </div>
+            <div class="basket-grid-item">
+                <p id="cpuQuantityBask">Quantity: 0</p>
+                <p id="cpuSubtotal">Subtotal: €0</p>
+            </div>
+
+            <div class="basket-grid-item">
+                <h3 id="gpuNameBasket"></h3>
+                <img id="basket" src="../Images/GraphicsCard.png" alt="Image of graphics card">
+            </div>
+            <div class="basket-grid-item">
+                <p id="gpuQuantityBask">Quantity: 0</p>
+                <p id="gpuSubtotal">Subtotal: €0</p>
+            </div>
+
+            <div class="basket-grid-item">
+                <h3 id="motherboardNameBasket"></h3>
+                <img id="basket" src="../Images/Motherboard.png" alt="Image of motherboard">
+            </div>
+            <div class="basket-grid-item">
+                <p id="motherboardQuantityBask">Quantity: 0</p>
+                <p id="motherboardSubtotal">Subtotal: €0</p>
+            </div>
+
+            <div class="basket-grid-item">
+                <h3 id="ramNameBasket"></h3>
+                <img id="basket" src="../Images/Ram.png" alt="Image of ram">
+            </div>
+            <div class="basket-grid-item">
+                <p id="ramQuantityBask">Quantity: 0</p>
+                <p id="ramSubtotal">Subtotal: €0</p>
+            </div>
+
+            <div class="basket-grid-item">
+                <h3 id="caseNameBasket"></h3>
+                <img id="basket" src="../Images/Case.png" alt="Image of pink pc case">
+            </div>
+            <div class="basket-grid-item">
+                <p id="caseQuantityBask">Quantity: 0</p>
+                <p id="caseSubtotal">Subtotal: €0</p>
+            </div>
+
+            <div class="basket-grid-item">
+                <h3 id="ssdNameBasket"></h3>
+                <img id="basket" src="../Images/SSD.png" alt="Image of SSD">
+            </div>
+            <div class="basket-grid-item">
+                <p id="ssdQuantityBask">Quantity: 0</p>
+                <p id="ssdSubtotal">Subtotal: €0</p>
+            </div>
+
+            <div class="basket-grid-item special">
+                <h4 id="total">Total: €0</h4>
+            </div>
+            <div class="basket-grid-item special">
+                <input type="button" value="Checkout" onclick="window.location.href='Checkout.html'">
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-item footer">
+        <p>[1] Due to our insane markups, "lowest price possible" is a flat 150 Euro above MSRP</p>
+        <hr>
+        <p>
+            If you have a bad experience with any members of our staff whether in store or online please click <a href="Complaints.html">here</a> and we will have them shot and their family sent to a labour camp
+        </p>
+        <hr>
+        <p id="contactinfo">
+            Phone number - 000-000-0000<br>
+            Email - <a href="mailto:dontcare@taketheL.com">dontcare@taketheL.com</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
