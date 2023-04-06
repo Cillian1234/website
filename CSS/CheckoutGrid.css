@@ -21,26 +21,32 @@
 .item-grid-item {
     background-color: darkslategrey;
 }
-.basket-grid-container {
-    display: grid;
-    background-color: darkviolet;
-    grid-template-columns: 15vw auto;
-    grid-template-rows: auto;
-}
-.basket-grid-item {
-    background-color: darkslategrey;
-    text-align: center;
-    border-top: 1px black solid;
-}
-.basket-grid-item > p {
-    background-color: #3d5252;
-    padding: 15px 0 15px 0;
-    justify-content: space-between;
-}
 .header {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
     grid-row: 1;
     font-size: 1.3vw;
+}
+.form {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: auto;
+}
+.button {
+    grid-column: 1 / span 2;
+}
+.item {
+
+}
+.hidden {
+    display: none;
+}
+.main {
+    grid-column: 1;
+    grid-row: 2;
+}
+.right {
+    grid-column: 2;
+    grid-row: 2;
 }
 .item1 {
     grid-column: 1;
@@ -67,9 +73,27 @@
     grid-row: 3;
 }
 .footer {
-    grid-column: 1 / span 3;
-    grid-row: 5;
+    grid-column: 1 / span 2;
+    grid-row: 3;
     font-size: 1vw;
+}
+a {
+    background-color: #3c5b5b;
+    text-decoration: none;
+    border-radius: 3px;
+}
+a:hover {
+    color: #410877;
+}
+#shipDetails {
+    margin: 0% 25% 0% 25%;
+    width: 50%;
+    background-color: #31311e;
+}
+#shipDetails img {
+    border: none;
+    max-height: 1.7vw;
+    float: right;
 }
 img {
     border: 1px solid black;
