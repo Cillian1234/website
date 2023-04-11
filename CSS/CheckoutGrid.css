@@ -1,25 +1,21 @@
 .grid-container {
     display: grid;
     gap: 10px;
-    background-color: darkviolet;
     padding: 10px;
 }
 .item-grid-container {
     display: grid;
-    background-color: darkviolet;
-    grid-template-columns: 30% 30% auto;
+    grid-template-columns: 30% 35% auto ;
     grid-template-rows: auto;
+    place-items: center;
 }
 .grid-item {
-    background-color: darkslategrey;
     text-align: center;
     padding: 20px;
     font-size: 1vw;
     border-radius: 5px;
-    border: 1px black solid;
-}
-.item-grid-item {
-    background-color: darkslategrey;
+    border: 1px white solid;
+    margin: 10px;
 }
 .header {
     grid-column: 1 / span 2;
@@ -30,6 +26,12 @@
     display: grid;
     grid-template-columns: 40% 40%;
     grid-template-rows: auto;
+    place-content: center;
+}
+.item > input {
+    background-color: lightgrey;
+    border-radius: 5px;
+    border-style: none;
 }
 .button {
     grid-column: 1 / span 2;
@@ -78,17 +80,13 @@
     font-size: 1vw;
 }
 a {
-    background-color: #3c5b5b;
-    text-decoration: none;
     border-radius: 3px;
-}
-a:hover {
-    color: #410877;
 }
 #shipDetails {
     margin: 0% 25% 0% 25%;
     width: 50%;
-    background-color: #31311e;
+    border: 1px white ridge;
+    border-radius: 5px;
 }
 #shipDetails img {
     border: none;
