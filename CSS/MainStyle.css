@@ -1,5 +1,10 @@
-html {
-    background: #343333;
+body {
+    background-color: #222626;
+    color: rgb(255,255,255,0.75);
+}
+
+.grid-item {
+    background-color: #222626;
 }
 
 ul.flexnav {
@@ -16,7 +21,10 @@ h1 {
 
 a {
     text-decoration: underline;
-    color: black;
+    color: #6a7777;
+}
+a:hover {
+    color: #946cd2;
 }
 
 #contactinfo {

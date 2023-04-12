@@ -1,16 +1,15 @@
 .grid-container {
     display: grid;
     gap: 10px;
-    background-color: darkviolet;
     padding: 10px;
 }
 
 .grid-item {
-    background-color: darkslategrey;
     text-align: center;
     padding: 20px;
     font-size: 2vw;
     border-radius: 5px;
+    border: 1px white solid;
 }
 
 .header {
@@ -44,16 +43,15 @@ iframe {
     .grid-container {
         display: grid;
         gap: 10px;
-        background-color: darkviolet;
         padding: 10px;
     }
 
     .grid-item {
-        background-color: darkslategrey;
         text-align: center;
         padding: 20px;
         font-size: 3vw;
         border-radius: 5px;
+        background-color: #070e0e;
     }
 
     .header {

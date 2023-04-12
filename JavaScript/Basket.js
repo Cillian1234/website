@@ -2,10 +2,10 @@
         ["cpuName", "gpuName", "motherboardName", "ramName", "caseName", "ssdName"],
         ["cpuNameBasket", "gpuNameBasket", "motherboardNameBasket", "ramNameBasket", "caseNameBasket", "ssdNameBasket"]
     ];
-    const names = ["Intel core i7", "Nvidia graphics card probably", "Motherboard", "Ram", "Cutsey pink case", "SSD"];
+    const names = ["Intel core i7", "Nvidia graphics card probably", "Motherboard", "Ram", "Cutesy pink case", "SSD"];
 
-    const quantityID = ["cpuQuantity", "gpuQuantity", "motherboardQuantity", "ramQuantity", "caseQuantity", "ssdQuantity"];
-    let storageItems = [localStorage.getItem("cpuQuantity"), localStorage.getItem("gpuQuantity"), localStorage.getItem("motherboardQuantity"), localStorage.getItem("ramQuantity"), localStorage.getItem("caseQuantity"), localStorage.getItem("ssdQuantity")]
+    const quantityID = ["cpuQuantity", "gpuQuantity", "motherboardQuantity", "ramQuantity", "caseQuantity", "ssdQuantity", "total"];
+    let storageItems = [localStorage.getItem("cpuQuantity"), localStorage.getItem("gpuQuantity"), localStorage.getItem("motherboardQuantity"), localStorage.getItem("ramQuantity"), localStorage.getItem("caseQuantity"), localStorage.getItem("ssdQuantity"), localStorage.getItem("total")];
 
 function startup() {
     let arrayLength = names.length;
@@ -16,15 +16,19 @@ function startup() {
     }
 }
 
+
 function checkoutSetup() {
     let arrayLength = names.length;
         for (let j = 0; j < arrayLength; j++) {
             document.getElementById(namesID[0][j]).innerHTML = names[j];
         }
 
-    for (let i = 0; i < names.length; i++) {
+    for (let i = 0; i < quantityID.length; i++) {
         document.getElementById(quantityID[i]).value = storageItems[i];
     }
+    document.getElementById("total").innerHTML = '€'+localStorage.getItem("total");
+    /* This for loop for all I can see should also set the total value, but for some reason won't unless I do this. I don't know... */
+
 
 }
 
@@ -84,5 +88,6 @@ function ssdTotal() {
 }
 
 function totalFunc() {
+    localStorage.setItem("total", String((cpuTotal()+gpuTotal()+motherboardTotal()+ramTotal()+caseTotal()+ssdTotal())))
     document.getElementById("total").innerHTML = 'Total: €'+(cpuTotal()+gpuTotal()+motherboardTotal()+ramTotal()+caseTotal()+ssdTotal());
 }

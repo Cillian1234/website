@@ -1,46 +1,56 @@
 .grid-container {
     display: grid;
     gap: 10px;
-    background-color: darkviolet;
     padding: 10px;
+    grid-template-columns: 40% auto;
 }
 .item-grid-container {
     display: grid;
-    background-color: darkviolet;
-    grid-template-columns: 30% 30% auto;
+    grid-template-columns: 30% 35% auto ;
     grid-template-rows: auto;
+    place-items: center;
 }
 .grid-item {
-    background-color: darkslategrey;
     text-align: center;
     padding: 20px;
     font-size: 1vw;
     border-radius: 5px;
-    border: 1px black solid;
-}
-.item-grid-item {
-    background-color: darkslategrey;
-}
-.basket-grid-container {
-    display: grid;
-    background-color: darkviolet;
-    grid-template-columns: 15vw auto;
-    grid-template-rows: auto;
-}
-.basket-grid-item {
-    background-color: darkslategrey;
-    text-align: center;
-    border-top: 1px black solid;
-}
-.basket-grid-item > p {
-    background-color: #3d5252;
-    padding: 15px 0 15px 0;
-    justify-content: space-between;
+    border: 1px white solid;
+    margin: 10px;
 }
 .header {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
     grid-row: 1;
     font-size: 1.3vw;
+}
+.form {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: auto;
+    place-content: center;
+}
+.item > input {
+    background-color: lightgrey;
+    border-radius: 5px;
+    border-style: none;
+}
+.button {
+    grid-column: 1 / span 2;
+}
+.item {
+
+}
+.hidden {
+    display: none;
+}
+.main {
+    grid-column: 1;
+    grid-row: 2;
+}
+.right {
+    grid-column: 2;
+    grid-row: 2;
+
 }
 .item1 {
     grid-column: 1;
@@ -67,13 +77,31 @@
     grid-row: 3;
 }
 .footer {
-    grid-column: 1 / span 3;
-    grid-row: 5;
+    grid-column: 1 / span 2;
+    grid-row: 3;
     font-size: 1vw;
+}
+a {
+    border-radius: 3px;
+}
+#shipDetails {
+    margin: 0 25% 0 25%;
+    width: 50%;
+    border: 1px white ridge;
+    border-radius: 5px;
+}
+#shipDetails img {
+    border: none;
+    max-height: 1.7vw;
+    float: right;
 }
 img {
     border: 1px solid black;
     aspect-ratio: 1/1;
     max-width: 9vw;
     max-height: 9vw;
+}
+.errorForm {
+    color: red;
+    font-size: 0.75vw;
 }
