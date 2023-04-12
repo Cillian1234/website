@@ -2,6 +2,7 @@
     display: grid;
     gap: 10px;
     padding: 10px;
+    grid-template-columns: 40% auto;
 }
 .item-grid-container {
     display: grid;
@@ -49,6 +50,7 @@
 .right {
     grid-column: 2;
     grid-row: 2;
+
 }
 .item1 {
     grid-column: 1;
@@ -83,7 +85,7 @@ a {
     border-radius: 3px;
 }
 #shipDetails {
-    margin: 0% 25% 0% 25%;
+    margin: 0 25% 0 25%;
     width: 50%;
     border: 1px white ridge;
     border-radius: 5px;
@@ -98,4 +100,8 @@ img {
     aspect-ratio: 1/1;
     max-width: 9vw;
     max-height: 9vw;
+}
+.errorForm {
+    color: red;
+    font-size: 0.75vw;
 }

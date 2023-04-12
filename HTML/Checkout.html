@@ -140,52 +140,52 @@
         <div class="grid-item checkout">
             <p>Are these items correct? if not please<a href="Products.html"> return to the products page </a>and correct any errors</p>
             <p>If you're happy please continue and fill out our checkout form</p>
-            <h2 id="shipDetails">Shipping details <img src="../Images/DropMenuIcon.png"> </h2>
+            <h2 id="shipDetails">Shipping details <img src="../Images/DropMenuIcon.png"></h2>
         </div>
-        <form id="menu" class="hidden">
+
+        <form id="ShippingForm" class="hidden">
             <div class="grid-item form">
                 <div class="grid-item item">
                     <label for="Email">Email address:</label><br>
-                    <span class="errorForm" id="emailError"></span>
-                    <input type="email" id="Email" name="Email"><br>
+                    <span class="errorForm" id="emailError"></span><br>
+                    <input type="text" id="Email" name="Email"><br>
                 </div>
 
                 <div class="grid-item item">
                     <label for="Address">Address:</label><br>
-                    <span class="errorForm" id="addressError"></span>
+                    <span class="errorForm" id="addressError"></span><br>
                     <input type="text" id="Address" name="Address"><br>
                 </div>
 
                 <div class="grid-item item">
                     <label for="City">City:</label><br>
-                    <span class="errorForm" id="cityError"></span>
+                    <span class="errorForm" id="cityError"></span><br>
                     <input type="text" id="City" name="City"><br>
                 </div>
 
                 <div class="grid-item item">
                     <label for="Country">Country:</label><br>
-                    <span class="errorForm" id="countryError"></span>
+                    <span class="errorForm" id="countryError"></span><br>
                     <input type="text" id="Country" name="Country"><br>
                 </div>
                 <div class="grid-item item">
+                    <span class="errorForm" id="shippingError"></span><br>
                     <label>Standard shipping (+€0)</label>
-                    <input type="radio" id="Shipping" value="Standard"><br>
+                    <input type="radio" id="Shipping" value="Standard" name="Shipping" required><br>
 
                     <label>Express shipping (+€10)</label>
-                    <input type="radio" id="Shipping" value="Express"><br>
-                    <span class="errorForm" id="shippingError"></span>
+                    <input type="radio" id="Shipping" value="Express" name="Shipping"><br>
                 </div>
                 <div class="grid-item item">
                     <label for="terms">Please agree to our <a href="Terms.html">Terms and conditions</a></label>
-                    <span class="errorForm" id="termsError"></span>
-                    <input type="checkbox" id="Terms" name="terms"><br>
+                    <span class="errorForm" id="termsError"></span><br>
+                    <input type="checkbox" id="Terms" name="terms" required><br>
                 </div>
                 <div class="grid-item button">
-                    <button type="submit">Register</button>
+                    <input type="submit" value="Register">
                 </div>
             </div>
         </form>
-        <script>$("#menu").validate();</script>
     </div>
 
     <div class="grid-item footer">
