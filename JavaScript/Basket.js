@@ -16,7 +16,6 @@ function startup() {
     }
 }
 
-
 function checkoutSetup() {
     let arrayLength = names.length;
         for (let j = 0; j < arrayLength; j++) {
@@ -28,8 +27,6 @@ function checkoutSetup() {
     }
     document.getElementById("total").innerHTML = '€'+localStorage.getItem("total");
     /* This for loop for all I can see should also set the total value, but for some reason won't unless I do this. I don't know... */
-
-
 }
 
 function cpuTotal() {

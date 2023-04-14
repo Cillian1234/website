@@ -14,6 +14,7 @@
     <script>document.addEventListener("DOMContentLoaded", function(){checkoutSetup();});</script>
     <title>Checkout</title>
 </head>
+
 <body>
 <div class="grid-container">
     <div class="grid-item header">
@@ -143,7 +144,7 @@
             <h2 id="shipDetails">Shipping details <img src="../Images/DropMenuIcon.png"></h2>
         </div>
 
-        <form id="ShippingForm" class="hidden">
+        <form id="ShippingForm" class="hidden" onsubmit="return false">
             <div class="grid-item form">
                 <div class="grid-item item">
                     <label for="Email">Email address:</label><br>
@@ -180,6 +181,37 @@
                     <label for="terms">Please agree to our <a href="Terms.html">Terms and conditions</a></label>
                     <span class="errorForm" id="termsError"></span><br>
                     <input type="checkbox" id="Terms" name="terms" required><br>
+                </div>
+                <div class="grid-item button">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+
+        <form id="PaymentForm" class="hidden">
+            <div class="grid-item form">
+                <div class="grid-item item">
+                    <label for="CardNumber">Card Number:</label><br>
+                    <span class="errorForm" id="CardNumberError"></span><br>
+                    <input type="text" id="CardNumber" name="CardNumber"><br>
+                </div>
+
+                <div class="grid-item item">
+                    <label for="ExpirationDate">Expiration Date:</label><br>
+                    <span class="errorForm" id="ExpirationDateError"></span><br>
+                    <input type="text" id="ExpirationDate" name="ExpirationDate"><br>
+                </div>
+
+                <div class="grid-item item">
+                    <label for="CVV">CVV:</label><br>
+                    <span class="errorForm" id="CVVError"></span><br>
+                    <input type="text" id="CVV" name="CVV"><br>
+                </div>
+
+                <div class="grid-item item">
+                    <label for="CardholderName">Cardholder Name:</label><br>
+                    <span class="errorForm" id="CardholderNameError"></span><br>
+                    <input type="text" id="CardholderName" name="CardholderName"><br>
                 </div>
                 <div class="grid-item button">
                     <input type="submit" value="Register">

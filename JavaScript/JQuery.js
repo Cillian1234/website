@@ -89,7 +89,8 @@ $(document).ready(function() {
         validateTerms();
 
         if (emailError === false && addressError === false && cityError === false && countryError === false && termsError === false) {
-            alert("Success");
+
+            $("#PaymentForm").slideDown(300);
             return true;
         } else {
             alert("Try again");

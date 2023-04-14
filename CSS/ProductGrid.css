@@ -21,7 +21,7 @@
 }
 .basket-grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto 13vw auto 13vw auto 13vw;
     grid-template-rows: auto;
 }
 .basket-grid-item {
