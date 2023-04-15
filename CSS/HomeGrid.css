@@ -38,6 +38,11 @@ iframe {
     grid-row: 3;
     font-size: 1vw;
 }
+#myMap {
+    position:relative;
+    width:fit-content;
+    height:400px;
+}
 
 @media (max-width: 800px) {
     .grid-container {
@@ -51,7 +56,6 @@ iframe {
         padding: 20px;
         font-size: 3vw;
         border-radius: 5px;
-        background-color: #070e0e;
     }
 
     .header {
