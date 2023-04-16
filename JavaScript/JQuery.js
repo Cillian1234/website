@@ -7,19 +7,25 @@ $(document).ready(function() {
     $("#addressError").hide();
     $("#cityError").hide();
     $("#countryError").hide();
-    $("#termsError").hide();
 
     let emailError = false,
         addressError = false,
         cityError = false,
         countryError = false,
         termsError = false;
+        CardNumberError = false,
+        ExpirationDateError = false,
+        CVVError = false,
+        cardholderNameError = false;
 
     $("#Email").focusout(function (){validateEmail();});
     $("#Address").focusout(function (){validateAddress();});
     $("#City").focusout(function (){validateCity();});
     $("#Country").focusout(function (){validateCountry();});
-    $("#Terms").focusout(function (){validateTerms();});
+    $("#CardNumber").focusout(function (){validateCardNum();});
+    $("#ExpirationDate").focusout(function (){validateExpirDate();});
+    $("#CVV").focusout(function (){validateCVV();});
+    $("#cardholderName").focusout(function (){validateCardName();});
 
     function validateEmail() {
         let pattern = /^([\w-.]+@([\w-]+\.)+[\w-]{2,4})?$/,
@@ -69,15 +75,52 @@ $(document).ready(function() {
             countryError = true;
         }
     }
-    function validateTerms() {
-        let terms = $("#Terms").val();
-        if (terms) {
-            $("#termsError").hide();
-            termsError = false;
+    function validateCardNum() {
+        let pattern =  /^[\s0-9]*$/,
+            CardNum = $("#CardNumber").val();
+        if (pattern.test(CardNum) && CardNum !== '') {
+            $("#CardNumberError").hide();
+            CardNumberError = false;
         } else {
-            $("#termsError").html("This field is required");
-            $("#termsError").show();
-            termsError = true;
+            $("#CardNumberError").html("This field is required, 0-9 only");
+            $("#CardNumberError").show();
+            CardNumberError = true;
+        }
+    }
+    function validateExpirDate() {
+        let pattern =  /^\d\/\d*$/,
+            ExpirDate = $("#ExpirationDate").val();
+        if (pattern.test(ExpirDate) && ExpirDate !== '') {
+            $("#ExpirationDateError").hide();
+            ExpirationDateError = false;
+        } else {
+            $("#ExpirationDateError").html("This field is required, Format: xx/xx");
+            $("#ExpirationDateError").show();
+            ExpirationDateError = true;
+        }
+    }
+    function validateCVV() {
+        let pattern =  /^[0-9]*$/,
+            CVV = $("#CVV").val();
+        if (pattern.test(CVV) && CVV !== '') {
+            $("#CVVError").hide();
+            CVVError = false;
+        } else {
+            $("#CVVError").html("This field is required");
+            $("#CVVError").show();
+            CVVError = true;
+        }
+    }
+    function validateCardName() {
+        let pattern =  /^[\sa-zA-Z]*$/,
+            CardName = $("#cardholderName").val();
+        if (pattern.test(CardName) && CardName !== '') {
+            $("#cardholderNameError").hide();
+            cardholderNameError = false;
+        } else {
+            $("#cardholderNameError").html("This field is required, letters a-z only");
+            $("#cardholderNameError").show();
+            cardholderNameError = true;
         }
     }
 
@@ -86,15 +129,24 @@ $(document).ready(function() {
         validateAddress();
         validateCity();
         validateCountry();
-        validateTerms();
 
         if (emailError === false && addressError === false && cityError === false && countryError === false && termsError === false) {
-
             $("#PaymentForm").slideDown(300);
-            return true;
         } else {
             alert("Try again");
-            return false;
+        }
+    });
+    
+    $("#PaymentForm").submit(function () {
+        validateCardNum();
+        validateExpirDate();
+        validateCVV();
+        validateCardName();
+
+        if (CardNumberError === false && ExpirationDateError === false && CVVError === false && cardholderNameError === false) {
+            alert("Success");
+        } else {
+            alert("Try again");
         }
     });
 });

@@ -2,6 +2,7 @@
     display: grid;
     gap: 10px;
     padding: 10px;
+
 }
 .item-grid-container {
     display: grid;
@@ -193,7 +194,7 @@ input[type="button"] {
     .grid-item {
         text-align: center;
         padding: 5px;
-        font-size: 3.5vw;
+        font-size: 3vw;
         border-radius: 5px;
     }
     .item-grid-item {
@@ -203,8 +204,8 @@ input[type="button"] {
         display: grid;
         grid-column: 1;
         grid-row: 8;
-        grid-template-columns: 25vw auto 25vw auto;
-        grid-template-rows: auto;
+        grid-template-columns: 25vw auto;
+        grid-template-rows: auto auto auto;
     }
     .basket-grid-item {
         text-align: center;
