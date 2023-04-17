@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="../CSS/MainStyle.css">
     <link rel="stylesheet" href="../CSS/HomeGrid.css">
     <link rel="stylesheet" href="../CSS/flexnav.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="../JavaScript/jquery.flexnav.min.js" type="text/javascript"></script>
+    <script src="../JavaScript/Complaints.js"></script>
     <title>Complaint form</title>
 </head>
-<body>
+<body onload="writeComplaint();">
 <div class="grid-container">
     <div class="grid-item header">
         <h1>Computer Company</h1>
@@ -29,13 +30,43 @@
         <script>$(".flexnav").flexNav();</script>
     </div>
     <div class="grid-item main">
+        <form id="ComplaintForm" class="hidden" onsubmit="return false">
+            <div class="grid-item form">
+                <div class="grid-item item">
+                    <label for="Name">Name:</label><br>
+                    <input type="text" id="Name" name="Name"><br>
+                </div>
 
+                <div class="grid-item item">
+                    <label for="Date">Date:</label><br>
+                    <input type="text" id="Date" name="Date"><br>
+                </div>
+
+                <div class="grid-item item">
+                    <label for="Complaint">Please tell us about your complaint:</label><br>
+                    <textarea id="Complaint" name="Complaint" rows="5" cols="50"></textarea><br>
+                </div>
+                <div class="grid-item button">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
     </div>
     <div class="grid-item right">
-
+        <h2>Recent complaints</h2>
+        <div class="ComplainerName"></div>
+        <div class="ComplaintDate"></div>
+        <div class="Complaint"></div>
     </div>
     <div class="grid-item footer">
-
+        <p>
+            If you have a bad experience with any members of our staff whether in store or online please click <a href="Complaints.html">here</a> and we will have them shot and their family sent to a labour camp
+        </p>
+        <hr>
+        <p id="contactinfo">
+            Phone number - 000-000-0000<br>
+            Email - <a href="mailto:dontcare@taketheL.com">dontcare@taketheL.com</a>
+        </p>
     </div>
 </div>
 </body>
